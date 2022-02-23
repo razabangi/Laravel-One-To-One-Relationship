@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\MobileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("/customer/create", [CustomerController::class, "create"]);
+Route::get("/customer/show/{id}", [CustomerController::class, "show"]);
+Route::get("/mobile/show/{id}", [MobileController::class, "show"]);
